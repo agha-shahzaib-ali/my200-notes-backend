@@ -3,7 +3,7 @@ require("dotenv").config();
 console.log(process.env.DATABASE_USER); // Its working all fine!!!!
 // CORS (Cross Origin)
 const cors = require("cors");
-// Express Application
+// Create an Express Application
 const app = express();
 // Express Router
 const router = express.Router();
@@ -12,7 +12,7 @@ const { notesRouter } = require("./api/v1/index");
 //Mongoose
 require("./db");
 
-const port = 5000;
+const port = process.env.PORT || 5000; // define a port
 const server = "http://localhost";
 
 //CORS
