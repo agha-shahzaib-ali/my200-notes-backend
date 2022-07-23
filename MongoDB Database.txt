@@ -1,0 +1,45 @@
+RDBMS (Relational DataBase Management Systems)
+SQL
+TABLES
+COLUMNS
+ROWS
+
+User Table:
+	NAME	|	AGE	|	DESIGNATION
+	Ahsan	|	30	|	Software Architect
+	Saad	|	27	|	Software Engineer
+
+_______________________________________________________________________________________________
+
+Document Database:
+
+Collections
+
+User Collection:
+Array of Documents
+Looks similar to a JavaScript Object
+[
+{
+	name: 'Ahsan',
+	age: 30,
+	Designation: 'Software Architect'
+},
+{
+	name: 'Saad',
+	age: 27,
+	Designation: 'Software Engineer'
+}
+
+]
+
+
+Create a Model:
+1. Create a schema
+2. Create a model using the schema
+
+
+/notes
+Get elements => GET
+Get element by ID => GET/:id/
+Add element => POST
+Delete element => DELETE/:id/ 
