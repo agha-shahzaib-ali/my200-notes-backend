@@ -47,7 +47,7 @@ notesRouter.get("/:id", (req, res) => {
     res.json({
       //https://my200-notes-backend.herokuapp.com/notes
       note,
-      reply: "note by id success",
+      reply: "Get note by id success",
     });
   });
 });
@@ -107,7 +107,7 @@ notesRouter.put("/:id", (req, res) => {
       }
       res.json({
         note: updatedNote,
-        reply: "delete note by id success",
+        reply: "Update note by id success",
       });
     }
   );
