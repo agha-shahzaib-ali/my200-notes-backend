@@ -1,6 +1,6 @@
 const express = require("express"); //Importing Express
 const notesRouter = express.Router(); //Express Router
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 const Note = require("../../db/note.model");
 // For this Router File (See Below)
 // {  ("/") ====> ("http://localhost:5000/notes")  }
@@ -15,8 +15,14 @@ notesRouter.get("/", (req, res) => {
     }
     res.json({
       notes,
-      // success: true,
+      success: true,
     });
+  });
+});
+//Example of a dummy get request
+notesRouter.get("/dummy", (req, res) => {
+  res.json({
+    text: "dummy",
   });
 });
 // Add a new note
@@ -90,7 +96,7 @@ notesRouter.delete("/:id", (req, res) => {
 notesRouter.put("/:id", (req, res) => {
   const noteId = req.params.id;
   const updatedBody = req.body;
-  Note.findOneAndUpdate(
+  Note.findByIdAndUpdate(
     noteId,
     updatedBody,
     {
@@ -111,10 +117,6 @@ notesRouter.put("/:id", (req, res) => {
       });
     }
   );
-});
-
-notesRouter.get("/dummy", (req, res) => {
-  res.json({ text: "dummy" });
 });
 
 module.exports = {

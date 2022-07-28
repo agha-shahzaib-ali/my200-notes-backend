@@ -38,8 +38,31 @@ Create a Model:
 2. Create a model using the schema
 
 
-/notes
-Get elements => GET
-Get element by ID => GET/:id/
-Add element => POST
-Delete element => DELETE/:id/ 
+/notes									All Methods require a Filter Object
+________________________________________________________________________________________________
+Get elements => GET                     Note.find(
+										{}(filter Object), 						
+										(err, notes)=>{
+
+										});
+________________________________________________________________________________________________
+Get element by ID => GET/:id/			Note.findById(
+										noteId(filter Object), 
+										(err, note)=>{
+
+										});
+________________________________________________________________________________________________
+Add element => POST						Note.findByIdAndUpdate(
+										noteId(filter Object),
+										updatedBody, 
+										{new: true},
+										(err, updatedNote)=>{
+
+										});
+________________________________________________________________________________________________
+Delete element => DELETE/:id/ 			Note.findByIdAndRemove(
+										noteId(filter Object), 
+										(err, note)=>{
+
+										});
+________________________________________________________________________________________________

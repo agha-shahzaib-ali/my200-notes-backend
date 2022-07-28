@@ -6,7 +6,6 @@ const cors = require("cors");
 // Create an Express Application
 const app = express();
 // Express Router
-const router = express.Router();
 app.use(express.json());
 const { notesRouter } = require("./api/v1/index");
 //Mongoose
